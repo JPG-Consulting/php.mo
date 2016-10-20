@@ -15,7 +15,7 @@
  * More info:
  * https://github.com/josscrowcroft/php.mo
  * 
- * Based on php-msgfmt by Matthias Bauer (Copyright © 2007), a command-line PHP tool
+ * Based on php-msgfmt by Matthias Bauer (Copyright Â© 2007), a command-line PHP tool
  * for converting .po files to .mo.
  * (http://wordpress-soc-2007.googlecode.com/svn/trunk/moeffju/php-msgfmt/msgfmt.php)
  * 
@@ -76,7 +76,7 @@ function phpmo_parse_po_file($in) {
 		if ($line === '')
 			continue;
 
-		list ($key, $data) = preg_split('/\s/', $line, 2);
+		list ($key, $data) = array_pad(preg_split('/\s/', $line, 2), 2, null);
 		
 		switch ($key) {
 			case '#,' : // flag...
